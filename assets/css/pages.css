@@ -1,0 +1,46 @@
+/* Styles propres à certaines pages */
+.form {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: var(--bordeaux-dark);
+}
+.form .full {
+  grid-column: 1/-1;
+}
+.form input,
+.form select,
+.form textarea {
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid rgba(107, 26, 43, 0.35);
+  border-radius: 10px;
+  background: var(--white);
+  color: var(--text);
+}
+.form .consent {
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+}
+.form .consent input {
+  margin-top: 4px;
+}
+.form__status {
+  margin-left: 12px;
+  color: var(--bordeaux);
+}
+@media (max-width: 560px) {
+  .form {
+    grid-template-columns: 1fr;
+  }
+}
+.legal p {
+  max-width: 65ch;
+}

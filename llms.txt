@@ -1,0 +1,20 @@
+# Trait Argonne Traiteur
+
+> Traiteur local en Argonne (France). Cuisine faite maison pour mariages, fêtes de famille et événements professionnels. Devis gratuit sur demande.
+
+## Pages principales
+- [Accueil](https://www.trait-argonne-traiteur.fr/): présentation du traiteur
+- [Prestations](https://www.trait-argonne-traiteur.fr/prestations.html): services proposés
+- [Mariages et réceptions](https://www.trait-argonne-traiteur.fr/prestations/mariages-receptions.html)
+- [Anniversaires et fêtes de famille](https://www.trait-argonne-traiteur.fr/prestations/fetes-de-famille.html)
+- [Événements professionnels](https://www.trait-argonne-traiteur.fr/prestations/evenements-professionnels.html)
+- [Buffets, cocktails et repas sur mesure](https://www.trait-argonne-traiteur.fr/prestations/buffets-cocktails-sur-mesure.html)
+- [Galerie photos](https://www.trait-argonne-traiteur.fr/galerie.html)
+- [À propos](https://www.trait-argonne-traiteur.fr/a-propos.html)
+- [Contact et demande de devis](https://www.trait-argonne-traiteur.fr/contact.html)
+
+## Informations pratiques
+- Zone desservie : Argonne (à préciser)
+- Téléphone : 03 00 00 00 00 (à compléter)
+- Email : contact@exemple.fr (à compléter)
+- Facebook : https://www.facebook.com/profile.php?id=61572675114165

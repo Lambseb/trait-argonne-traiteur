@@ -1,0 +1,310 @@
+/* Composants réutilisables */
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 99px;
+  padding: 12px 26px;
+  background: var(--bordeaux);
+  color: var(--white);
+  font: 500 1rem var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--bordeaux-dark);
+}
+.btn--light {
+  background: var(--white);
+  color: var(--bordeaux);
+}
+.btn--light:hover {
+  background: var(--rose);
+}
+.btn--outline {
+  background: none;
+  border: 1px solid var(--white);
+}
+.btn--outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+.card {
+  background: var(--white);
+  border: 1px solid rgba(107, 26, 43, 0.12);
+  border-radius: var(--radius);
+  padding: 26px;
+  
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+.card .photo {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+.photo {
+  border-radius: 16px;
+}
+.ph {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--bordeaux-light),
+    var(--bordeaux-dark)
+  );
+}
+.ph span {
+  margin: 12px;
+  background: var(--white);
+  color: var(--bordeaux);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+.gallery {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-auto-rows: 200px;
+}
+.gallery .ph {
+  border-radius: 12px;
+}
+.gallery .tall {
+  grid-row: span 2;
+}
+.gallery .wide {
+  grid-column: span 2;
+}
+@media (max-width: 560px) {
+  .gallery .wide {
+    grid-column: span 1;
+  }
+}
+.checklist {
+  padding-left: 1.2em;
+  max-width: 60ch;
+}
+.checklist li {
+  margin-bottom: 0.4em;
+}
+.note {
+  background: var(--rose);
+  border-left: 4px solid var(--bordeaux);
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+/* Carrousel */
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 64px);
+  height: calc(100svh - 64px);
+  min-height: 420px;
+  max-height: 900px;
+  overflow: hidden;
+  background: var(--bordeaux-dark);
+  color: var(--white);
+}
+.carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.9s ease;
+}
+.carousel__track .ph {
+  flex: 0 0 100%;
+}
+.carousel__track img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(74, 17, 29, 0.88),
+    rgba(74, 17, 29, 0.2) 70%
+  );
+  pointer-events: none;
+}
+.hero__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+}
+.hero__content .container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  width: 100%;
+}
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  margin: 0;
+}
+.hero p {
+  max-width: 34rem;
+  margin: 0;
+}
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.carousel__dots {
+  position: absolute;
+  z-index: 3;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.carousel__dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.45);
+}
+.carousel__dots button[aria-current="true"] {
+  background: var(--white);
+}
+.banner {
+  background: var(--bordeaux);
+  color: var(--white);
+  padding: 56px 0;
+}
+.banner h1 {
+  color: var(--white);
+  margin: 0 0 0.3em;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+.banner p {
+  margin: 0;
+  max-width: 40rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.banner a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .hero::after {
+    background: linear-gradient(
+      180deg,
+      rgba(74, 17, 29, 0.35),
+      rgba(74, 17, 29, 0.85)
+    );
+  }
+  .hero__content {
+    align-items: flex;
+    padding-bottom: 56px;
+  }
+}
+
+/* Apparition progressive (reveal.js) : le contenu reste visible si JavaScript est désactivé */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.js .photo.reveal,
+.js .gallery > .reveal {
+  transform: scale(0.95);
+}
+.js .photo.reveal.is-visible,
+.js .gallery > .reveal.is-visible {
+  transform: none;
+}
+/* Animation d'arrivée du texte du carrousel */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero__content .container > * {
+  animation: rise 0.9s ease both;
+}
+.hero__content .container > :nth-child(2) {
+  animation-delay: 0.15s;
+}
+.hero__content .container > :nth-child(3) {
+  animation-delay: 0.3s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero__content .container > * {
+    animation: none;
+  }
+}
+
+/* Bloc Facebook */
+.fb-box {
+  min-height: 380px;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(107, 26, 43, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px;
+  text-align: center;
+}
+.fb-box p {
+  margin: 0;
+}
+.fb-box__note {
+  font-size: 0.9rem;
+  max-width: 30ch;
+}
+.fb-box iframe {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: 600px;
+  border: 0;
+  border-radius: 12px;
+  margin: 0 auto;
+}
+.fb-box--loaded {
+  padding: 0;
+  border: 0;
+  background: none;
+  min-height: 0;
+}

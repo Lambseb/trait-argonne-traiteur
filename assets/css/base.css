@@ -1,0 +1,13 @@
+/* Variables, reset, typographie */
+:root{--bordeaux:#6B1A2B;--bordeaux-dark:#4A111D;--bordeaux-light:#8E2A40;--rose:#F6ECEE;--text:#2b1a1e;--white:#fff;
+--font-title:"Cormorant Garamond",Georgia,serif;--font-body:Jost,system-ui,sans-serif;--radius:14px;
+box-sizing:border-box;color-scheme:light;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:5rem}
+body{margin:0;font-family:var(--font-body);background:var(--white);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:var(--font-title);color:var(--bordeaux);line-height:1.1;margin:0 0 .5em}
+h2{font-size:clamp(2rem,4vw,2.8rem)}h3{font-size:1.5rem}
+a{color:inherit}
+img{max-width:100%;height:auto}
+:focus-visible{outline:3px solid var(--bordeaux);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
